@@ -147,7 +147,7 @@ function createElement(obj) {
   p2.textContent = obj.secondParagraph;
   p3.textContent = obj.thirdParagraph;
   btn.classList.add("expandButton");
-  btn.textContent = "btn";
+  btn.textContent = "Show More";
 
   article.appendChild(title);
   article.appendChild(date);
@@ -158,6 +158,11 @@ function createElement(obj) {
 
   btn.addEventListener("click", () => {
     article.classList.toggle("article-open");
+    if (article.classList.contains("article-open")) {
+      btn.textContent = "Show Less";
+    } else {
+      btn.textContent = "Show More";
+    }
   });
 
   return article;
