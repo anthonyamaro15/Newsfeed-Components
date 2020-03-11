@@ -168,6 +168,20 @@ function createElement(obj) {
   return article;
 }
 
+function addData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const newValues = {
+    title,
+    date,
+    firstParagraph,
+    secondParagraph,
+    thirdParagraph
+  };
+
+  return data.push(newValues);
+}
+
+addData("new title", "today", "example1", "example2", "example3");
+
 data.forEach(da => {
   parent.appendChild(createElement(da));
 });
