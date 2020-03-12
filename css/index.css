@@ -107,6 +107,48 @@
 .menu--open {
   transform: translate(0px);
 }
+.form {
+  width: 15%;
+  margin: 7rem auto 0;
+}
+.form textarea {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cec4c4;
+  padding: 0.5rem;
+}
+.form input {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cec4c4;
+}
+.form .btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.form .btn button {
+  display: block;
+  width: 80%;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border: none;
+  outline: none;
+  background: #388e3c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
 html,
 body {
   margin: 0;

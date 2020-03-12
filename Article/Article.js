@@ -1,6 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
+let data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
     date: "Nov 5th, 2018",
@@ -129,6 +129,13 @@ const data = [
 
 */
 const parent = document.querySelector(".articles");
+const form = document.querySelector(".form");
+const btn = document.querySelector(".button");
+const inputTitle = document.querySelector(".title");
+const inputDate = document.querySelector(".date");
+const textOne = document.querySelector("#one");
+const textTwo = document.querySelector("#two");
+const textThree = document.querySelector("#three");
 
 function createElement(obj) {
   const article = document.createElement("div");
@@ -138,6 +145,8 @@ function createElement(obj) {
   const p2 = document.createElement("p");
   const p3 = document.createElement("p");
   const btn = document.createElement("span");
+
+  let result = [];
 
   article.classList.add("article");
   title.textContent = obj.title;
@@ -167,6 +176,35 @@ function createElement(obj) {
 
   return article;
 }
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  let titleVal = inputTitle.value;
+  let dateVal = inputDate.value;
+  let tOneVal = textOne.value;
+  let tTwoVal = textTwo.value;
+  let tThreeVal = textThree.value;
+
+  if (
+    titleVal === "" ||
+    dateVal === "" ||
+    tOneVal === 0 ||
+    tTwoVal === "" ||
+    tThreeVal === ""
+  ) {
+    return alert("values cannot be empty");
+  }
+
+  addData(titleVal, dateVal, tOneVal, tTwoVal, tThreeVal);
+
+  let newArr = data.filter((a, b) => data.indexOf(a) === b);
+
+  parent.textContent = "";
+
+  newArr.forEach(da => {
+    parent.appendChild(createElement(da));
+  });
+});
 
 function addData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const newValues = {
